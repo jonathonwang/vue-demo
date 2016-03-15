@@ -42,6 +42,6 @@ elixir(function(mix) {
     ], 'dist/js/scripts.js', 'src/js/');
 
     // Sass Task
-    mix.sass('app.scss', 'dist/css', 'src/scss');
+    mix.sass('app.scss', 'dist/css', 'src/sass');
 
 });
