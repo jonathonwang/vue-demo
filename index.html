@@ -18,8 +18,10 @@
   <body id="vue-container">
 
     {{msg}}
-    {{hello}}
-
+    <input type="text" @keypress.enter="addItem()" v-model="newItem">
+    <ul>
+      <li v-for="item in itemArray" track-by="$index">{{ item }} <a class="btn btn-primary" href="#" @click.prevent="removeItem(item)"><span class="fa fa-trash-o"></span></a></li>
+    </ul>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

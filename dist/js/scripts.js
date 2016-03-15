@@ -6,13 +6,29 @@ var vueContainer = new Vue({
   el: '#vue-container',
 
   data: {
+    newItem: '',
     msg: 'hello World',
-    hello: '123'
+    itemArray: ['item1', 'item2', 'item3', 'item4']
   },
 
-  ready: function ready() {},
+  ready: function ready() {
+    console.log('Hello World');
+  },
 
-  methods: {}
+  components: {},
+
+  methods: {
+    addItem: function addItem() {
+      var myItem = this.newItem;
+      if (myItem !== '') {
+        this.itemArray.push(myItem);
+        this.newItem = '';
+      }
+    },
+    removeItem: function removeItem(item) {
+      this.itemArray.$remove(item);
+    }
+  }
 
 });
 
